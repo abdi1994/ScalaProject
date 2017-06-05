@@ -1,3 +1,6 @@
+import java.util.Collections
+import java.util.TimeZone
+
 /**
   * Created by Administrator on 05/06/2017.
   */
@@ -136,7 +139,7 @@ object Basic {
         else if (x % 5 == 0) {
           print(str2)
         }
-        else if (x % 3 == 0 && int1 % 3 == 0) {
+        else if (x % 3 == 0 && x % 3 == 0) {
           print(str1.concat(str2))
         }
         else {
@@ -151,6 +154,30 @@ object Basic {
     FizzBuzz("fizz", "Buzz", 15)
 
 
+
+    def RecursionOperator3(str1 : String, str2 : String, int1 : Int, x : Int): Unit = {
+      var x = 1;
+
+      if (x <= int1) {
+        if (x % 3 == 0) {
+          print(str1)
+        }
+        else if (x % 5 == 0) {
+          print(str2)
+        }
+        else if (x % 3 == 0 && x % 3 == 0) {
+          print(str1.concat(str2))
+        }
+        else {
+          print(x)
+        }
+        x = x + 1
+        RecursionOperator3(str1, str2, int1, x + 1)
+      }
+
+    }
+
+
     def Iteration1Recursion (str : String, int1 : Int): Unit = {
 
 
@@ -160,37 +187,19 @@ object Basic {
         Iteration1Recursion(str ,int1 - 1)
       }
 
-
     }
-
 
     Iteration1Recursion("Hi", 4)
 
-
-    def Iteration3Recursion (str1 : String, str2 : String, int1 : Int): Unit = {
-      var x = 1
-
-      if (x <= int1) {
-        if (x % 3 == 0) {
-          print(str1)
-        }
-        else if (x % 5 == 0) {
-          print(str2)
-        }
-        else if (x % 3 == 0 && int1 % 3 == 0) {
-          print(str1.concat(str2))
-        }
-        else {
-          print(x)
-        }
-        Iteration3Recursion(str1, str2, x + 1)
-      }
     }
 
-    Iteration3Recursion("fizz", "Buzz", 15)
 
-    }
+  def Functional1 (): Unit = {
+    val array1 : Array[String] = Array(array1.)
+    println(array1 + "\n")
+  }
 
+  Functional1();
 
 
 
