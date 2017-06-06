@@ -74,7 +74,14 @@ object Main {
     var z = str1.concat(str2)
     var w = char1
     var e = char2
+    var q = 0
+    var r = z.length
 
+    //z.foreach(z.replace(char1,char2))
+
+    val words = List(z)
+    words.flatMap(_.toList)
+    println(words)
 
 
   }
@@ -182,29 +189,24 @@ object Main {
 
   def PatternMatching2(any : Any): Unit = {
 
-
+    any match {
+      case Array =>
+      case List =>
+      case Tuple1 =>
+      //case util.Collection =>
+      case _ =>
+    }
 
   }
 
   def Functional1(): Unit = {
     val x : Array[String] = TimeZone.getAvailableIDs
-    val xs : String = x.mkString("      ").filter(true
-    )
+    val xs : String = x.mkString("      ")
+    val map : Map[Any] =
+
+   // xs.map(.split("/") -> xs.filter("/",true) -> xs.grouped(10))
+
     println(xs)
-    //
-    //xs.split("/")
-
-    // for(x <- 0 until xs.size by 1) {
-    // xs.takeRight(.split("/"));
-    //}
-
-    //val s = Map(TimeZone.getAvailableIDs)
-
-
-    //val x : Map[String, String] = Map(TimeZone.getAvailableIDs).mkString()
-
-
-    //print(Map(null, TimeZone.getAvailableIDs).mkString("---").split("/").filter(true).grouped(10))
 
   }
 
