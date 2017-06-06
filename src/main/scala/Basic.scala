@@ -195,8 +195,8 @@ object Basic {
 
 
   def Functional1 (): Unit = {
-    val array1 : Array[String] = Array(array1.)
-    println(array1 + "\n")
+    //val array1 : Array[String] = Array(arr
+   // println(array1 + "\n")
   }
 
   Functional1();
