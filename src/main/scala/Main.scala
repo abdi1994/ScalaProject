@@ -38,6 +38,9 @@ object Main {
     UniqueSum(1, 2, 3)
     UniqueSum(3, 3, 3)
     UniqueSum(1, 1, 2)
+    TooHot(80, false)
+    TooHot(100, false)
+    TooHot(100, true)
 
     println()
 
@@ -67,15 +70,12 @@ object Main {
   }
 
   def String2(str1 : String, str2 : String, char1 : Char, char2 : Char): Unit = {
-    var x = 0
+
     var z = str1.concat(str2)
+    var w = char1
+    var e = char2
 
-    for(x <- 0 to z.length) {
 
-    }
-
-    z.replace(char1, char2)
-    println(z)
 
   }
 
@@ -180,14 +180,31 @@ object Main {
     }
   }
 
-  //---
+  def PatternMatching2(any : Any): Unit = {
+
+
+
+  }
 
   def Functional1(): Unit = {
     val x : Array[String] = TimeZone.getAvailableIDs
-    val xs : String = x.mkString(",")
-    xs.split("/", -5)
+    val xs : String = x.mkString("      ").filter(true
+    )
+    println(xs)
+    //
+    //xs.split("/")
 
-    print(xs)
+    // for(x <- 0 until xs.size by 1) {
+    // xs.takeRight(.split("/"));
+    //}
+
+    //val s = Map(TimeZone.getAvailableIDs)
+
+
+    //val x : Map[String, String] = Map(TimeZone.getAvailableIDs).mkString()
+
+
+    //print(Map(null, TimeZone.getAvailableIDs).mkString("---").split("/").filter(true).grouped(10))
 
   }
 
@@ -220,7 +237,22 @@ object Main {
   }
 
   def TooHot(int1 : Int, bool : Boolean): Unit = {
-
+    bool match {
+      case true =>
+        if (int1 >= 60 && int1 <= 100) {
+          println(true)
+        }
+        else {
+          println(false)
+        }
+      case false =>
+        if (int1 >= 60 && int1 <= 90) {
+          println(true)
+        }
+        else {
+          println(false)
+        }
+    }
   }
 
 }
