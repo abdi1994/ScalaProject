@@ -6,7 +6,11 @@ package Garage
 class Person {
 
   private var name = ""
-  private var age = 0
+
+
+  //Setter
+
+
 
 
   //Getter
