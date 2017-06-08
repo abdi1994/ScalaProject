@@ -1,8 +1,3 @@
-import java.util
-import java.util.TimeZone
-/**
-  * Created by Administrator on 05/06/2017.
-  */
 object Main {
 
   def main(args: Array[String]): Unit = {
@@ -31,20 +26,21 @@ object Main {
     PatternMatchingConditional1(2, 4, false)
     PatternMatchingConditional2(2, 0)
     PatternMatchingConditional2(0, 5)
-
+    Functional1()
     Blackjack(18, 21)
     Blackjack(20, 18)
     Blackjack(22, 22)
     UniqueSum(1, 2, 3)
     UniqueSum(3, 3, 3)
     UniqueSum(1, 1, 2)
+//    UniqueSum2(1, 2, 3)
+//    UniqueSum2(3, 3, 3)
+//    UniqueSum2(1, 1, 2)
     TooHot(80, false)
     TooHot(100, false)
     TooHot(100, true)
 
     println()
-
-    Functional1()
 
   }
 
@@ -200,21 +196,16 @@ object Main {
   }
 
   def Functional1(): Unit = {
-    val x : Array[String] = TimeZone.getAvailableIDs
-    val xs : String = x.mkString("      ")
-    val map : Map[Any] =
 
-   // xs.map(.split("/") -> xs.filter("/",true) -> xs.grouped(10))
-
-    println(xs)
+    java.util.TimeZone.getAvailableIDs.map(item => item.split("/").last).filter(_.length > 3).grouped(10).map(a=>a(0)).toList
 
   }
 
   def Blackjack(int1 : Int, int2 : Int): Unit = {
-    if(int1 > int2 && int1 <= 21) {
+    if(int1 > int2 && (int1 <= 21 && int1 >= 1)) {
       println(int1)
     }
-    else if(int2 > int1 && int2 <= 21) {
+    else if(int2 > int1 && (int2 <= 21 && int2 >= 1)) {
       println(int2)
     }
     else if(int1 == int2 && (int1 <= 21 && int2 <= 21)) {
@@ -226,7 +217,6 @@ object Main {
   }
 
   def UniqueSum(int1 : Int, int2 : Int, int3 : Int): Unit = {
-    println()
     val set = Set(int1, int2, int3)
 
     if(set.size > 1) {
@@ -237,6 +227,24 @@ object Main {
     }
 
   }
+
+//  def UniqueSum2(int1 : Int, int2 : Int, int3 : Int): Unit = {
+//    val list = List(int1, int2, int3).sorted
+//    var temp = 0
+//
+//    for(i <- 0 until list.length) {
+//
+//      if (list(i) == list((i+1)%3) || list(i) == list((i-1)%3)) {
+//      }
+//      else{
+//        temp = temp + list(i)
+//
+//      }
+//      println(temp)
+//    }
+//
+//  }
+
 
   def TooHot(int1 : Int, bool : Boolean): Unit = {
     bool match {
@@ -256,5 +264,7 @@ object Main {
         }
     }
   }
+
+
 
 }
