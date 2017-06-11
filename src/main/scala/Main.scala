@@ -32,7 +32,6 @@ object Main {
     Blackjack(22, 22)
     UniqueSum(1, 2, 3)
     UniqueSum(3, 3, 3)
-    UniqueSum(1, 1, 2)
 //    UniqueSum2(1, 2, 3)
 //    UniqueSum2(3, 3, 3)
 //    UniqueSum2(1, 1, 2)
@@ -68,16 +67,9 @@ object Main {
   def String2(str1 : String, str2 : String, char1 : Char, char2 : Char): Unit = {
 
     var z = str1.concat(str2)
-    var w = char1
-    var e = char2
-    var q = 0
-    var r = z.length
 
-    //z.foreach(z.replace(char1,char2))
 
-    val words = List(z)
-    words.flatMap(_.toList)
-    println(words)
+    println(z.replace(char1, char2))
 
 
   }

@@ -6,7 +6,7 @@ package Garage
 class Person {
 
   private var name : String = ""
-  private var age : Int = null
+  private var age : Int = 0
 
 
   //Setter
