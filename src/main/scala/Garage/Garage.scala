@@ -52,6 +52,13 @@ class Garage {
   }
 
 
+  def EmployeeAvailability() = {
+
+    CarsInGarage.map(x => x.VehicleParts().foreach(x => x != false))
+
+  }
+
+
   def openGarage(): Unit = {
     GarageOpen = true
     var TotalDayEarning : Int = 0
@@ -67,6 +74,9 @@ class Garage {
     Employees.find(z => Employees.contains(z) && z.EmployeeFreeTime > 0)
   }
 
+  def ToString() = {
+    "Employees: %s\nCars in Garage: %s\nCars in Queue: %s\n".format(Employees, CarsInGarage, CarQueue)
+  }
 
 
 }
