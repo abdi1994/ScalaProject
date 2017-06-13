@@ -32,6 +32,18 @@ class Garage {
   }
 
 
+  def calculateBill(x : Vehicle) : Int = {
+    var FixingBill : Int = 0
+
+    x.Parts.foreach{
+      case part => if(part.Broken == true) {
+        FixingBill += part.CostAndDuration()._2
+      }
+      else {}
+      case _=>
+    }
+    FixingBill
+  }
 
 
   def openGarage(): Unit = {
@@ -40,6 +52,10 @@ class Garage {
 
   def closeGarage(): Unit = {
     GarageOpen = false
+  }
+
+  def freeEmployee(): Unit = {
+    Employees.find(z => Employees.contains(z) && z.EmployeeBusy == false)
   }
 
 
