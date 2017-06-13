@@ -263,6 +263,19 @@ object Main {
     }
   }
 
+  def PrimeNumbers1(int1 : Int): Unit = {
+    require(int1 >= 2)
+
+    def test(x : Int, primes : List[Int]) : List[Int] = {
+      if (x >= int1) primes
+      else if (prime(x, primes)) test(x + 1, x :: primes)
+      else test(x + 1, primes)
+    }
+    test(2, List()).reverse
+  }
+
+ // def prime(num : Int, factors : List[Int]) : Boolean = factors.forall(num % _! = 0)
+
 
 
 }
