@@ -27,4 +27,10 @@ class Customer extends Person with Vehicle {
   }
 
 
+  //ToString
+  override def ToString = {
+    "Customer ID: %s\nVehicle ID: %s\nName: %s \nAge: %s\nEmail: %s\nTelephone Number: %s\nAddress: %s\nWallet: %s".format(CustomerID, VehicleID, name, age, email, telephoneNumber, address, wallet)
+  }
+
+
 }

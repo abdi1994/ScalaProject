@@ -7,6 +7,7 @@ class Bike (vehicle: Vehicle, carm : String, reg : String) extends Vehicle{
 
   var BikeMake : String = ""
   var BikeReg : String = ""
+  //var Parts = List("Part1","Part2","Part3","Part4","Part5","Part6","Part7","Part8","Part9","Part10")
 
 
   //Setter
@@ -27,8 +28,10 @@ class Bike (vehicle: Vehicle, carm : String, reg : String) extends Vehicle{
     BikeReg
   }
 
-  //  override def ToString =  {
-  //    "Bike Make: %s \nReg: %s\nVehicle Details: ".foreach(BikeMake, BikeReg, Vehicle(vehicleid1 = "", vehicletype1 = ""))
-  //  }
+
+  //ToString
+  override def ToString = {
+    "Bike Make: %s\nBike Reg: %s\nVehicle ID: %s\nVehicle Type: %s".format(BikeMake, BikeReg, VehicleID, VehicleType)
+  }
 
 }

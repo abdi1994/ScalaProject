@@ -45,9 +45,18 @@ class Garage {
     FixingBill
   }
 
+  def removeQueue() = {
+    if(CarsInGarage.length < GarageCapacity && CarQueue.nonEmpty) {
+      CarsInGarage.append(CarQueue(0))
+    }
+  }
+
 
   def openGarage(): Unit = {
     GarageOpen = true
+    var TotalDayEarning : Int = 0
+
+
   }
 
   def closeGarage(): Unit = {
@@ -55,7 +64,7 @@ class Garage {
   }
 
   def freeEmployee(): Unit = {
-    Employees.find(z => Employees.contains(z) && z.EmployeeBusy == false)
+    Employees.find(z => Employees.contains(z) && z.EmployeeFreeTime > 0)
   }
 
 

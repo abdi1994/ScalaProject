@@ -7,7 +7,7 @@ trait Vehicle {
 
   var VehicleID : String = ""
   var VehicleType : String = ""
-  var Parts : List[Part]
+  var VehicleParts : List[String]
 
 
   //Setter
@@ -30,7 +30,6 @@ trait Vehicle {
 
 
   //ToString
-
   def ToString = {
     "Vehicle ID: %s \nVehicle Type: %s".format(VehicleID, VehicleType)
   }

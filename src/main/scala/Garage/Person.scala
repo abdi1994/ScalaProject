@@ -57,7 +57,4 @@ class Person  {
     "Name: %s \nAge: %s\nEmail: %s\nTelephone Number: %s\nAddress: %s\nWallet: %s".format(name, age, email, telephoneNumber, address, wallet)
   }
 
-//  val e = new Person("test", 20, "test", "test")
-
-
 }
