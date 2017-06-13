@@ -177,12 +177,12 @@ object Main {
 
   def PatternMatching2(any : Any): Unit = {
 
-    any match {
-      case Array =>
-      case List =>
-      case Tuple1 =>
-      //case util.Collection =>
-      case _ =>
+    def swap(pair : Any): Any = pair match {
+      case list @ List(i, j) => List(j, i)
+      case array @ Array(i, j) => Array(j, i)
+      case (i, j) => (j, i)
+      case collect : Seq[Int] if collect.size > 2 => swap(collect.take(2))
+      case _ => "Not Valid."
     }
 
   }
@@ -209,14 +209,20 @@ object Main {
   }
 
   def UniqueSum(int1 : Int, int2 : Int, int3 : Int): Unit = {
-    val set = Set(int1, int2, int3)
+//    val set = Set(int1, int2, int3)
+//
+//    if(set.size > 1) {
+//      println(set.sum)
+//    }
+//    else if (set.size == 1) {
+//      println("0")
+//    }
 
-    if(set.size > 1) {
-      println(set.sum)
-    }
-    else if (set.size == 1) {
-      println("0")
-    }
+    val inputs = List(int1, int2, int3)
+    var sum = 0
+    inputs.foreach(input => if (inputs.count(x => x == input) == 1) sum += input)
+
+    sum
 
   }
 

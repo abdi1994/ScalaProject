@@ -5,15 +5,20 @@ package Garage
   */
 class Person {
 
-  private var name : String = ""
-  private var age : Int = 0
+  var name : String = ""
+  var age : Int = 0
+  var email : String = ""
+  var telephoneNumber : String = ""
+
 
 
   //Setter
 
-  def Person (str1 : String, int1 : Int): Unit = {
-    this.name = str1
-    this.age = int1
+  def Person (name1 : String, age1 : Int, email1 : String, telephoneNumber1 : String): Unit = {
+    this.name = name1
+    this.age = age1
+    this.email = email1
+    this.telephoneNumber = telephoneNumber1
   }
 
   //Getter
@@ -22,8 +27,22 @@ class Person {
     name
   }
 
-  def getAge : String = {
-    name
+  def getAge : Int = {
+    age
+  }
+
+  def getEmail : String = {
+    email
+  }
+
+  def getTelephonenumber : String = {
+    telephoneNumber
+  }
+
+  //ToString
+
+  def ToString = {
+    "Name: %s \nAge: %s\nEmail: %s\nTelephone Number: %s".format(name, age, email, telephoneNumber)
   }
 
 
