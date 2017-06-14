@@ -3,7 +3,8 @@ package Garage
 /**
   * Created by Administrator on 06/06/2017.
   */
-class Car (vehicle: Vehicle, carm : String, reg : String) extends Vehicle{
+//Abstract is added to remove error however alternative would be implementation
+abstract class Car (vehicle: Vehicle, carm : String, reg : String) extends Vehicle{
 
   var CarMake : String = ""
   var CarReg : String = ""

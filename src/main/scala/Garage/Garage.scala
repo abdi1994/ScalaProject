@@ -7,6 +7,13 @@ import scala.collection.mutable.ListBuffer
   */
 class Garage {
 
+  def main(args: Array[String]): Unit = {
+
+    //val e = new Customer("1", "C2", "Test", 20, "Test-Email", "number", "test", 200)
+
+
+  }
+
   val GarageCapacity : Int = 10
   var CarsInGarage: ListBuffer[Vehicle] = ListBuffer.empty
   val Employees : ListBuffer[Employee] = ListBuffer.empty
@@ -23,8 +30,16 @@ class Garage {
     }
   }
 
-  def removeVehicle(VehReg : String) = {
+  def removeVehicleByID(VehReg : String) = {
     CarsInGarage = CarsInGarage.filterNot(v => VehReg == v.VehicleID)
+  }
+
+  def removeVehicleByModel(VehMod : String) = {
+    CarsInGarage = CarsInGarage.filterNot(v => VehMod == v.VehicleType)
+  }
+
+  def removeVehicleByModAndID(VehReg : String, VehMod : String) = {
+    CarsInGarage = CarsInGarage.filterNot(v => VehReg == v.VehicleID && VehMod == v.VehicleType)
   }
 
   def registerEmployee(newEmployee : Employee): Unit = {
@@ -35,7 +50,7 @@ class Garage {
   def calculateBill(x : Vehicle) : Int = {
     var FixingBill : Int = 0
 
-    x.Parts.foreach{
+    x.VehicleParts.foreach{
       case part => if(part.Broken == true) {
         FixingBill += part.CostAndDuration()._2
       }
@@ -51,12 +66,12 @@ class Garage {
     }
   }
 
-
-  def EmployeeAvailability() = {
-
-    CarsInGarage.map(x => x.VehicleParts().foreach(x => x != false))
-
-  }
+// To finish!!!
+//  def EmployeeAvailability() = {
+//
+//    CarsInGarage.map(x => x.VehicleParts().foreach(x => x != false))
+//
+//  }
 
 
   def openGarage(): Unit = {

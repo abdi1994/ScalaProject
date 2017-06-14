@@ -7,7 +7,7 @@ trait Vehicle {
 
   var VehicleID : String = ""
   var VehicleType : String = ""
-  var VehicleParts : List[String]
+  var VehicleParts : List[Part]
 
 
   //Setter

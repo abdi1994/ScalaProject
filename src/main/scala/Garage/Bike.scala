@@ -3,7 +3,8 @@ package Garage
 /**
   * Created by Administrator on 06/06/2017.
   */
-class Bike (vehicle: Vehicle, carm : String, reg : String) extends Vehicle{
+//Abstract is added to remove error however alternative would be implementation
+abstract class Bike(vehicle: Vehicle, carm : String, reg : String, test : List[Part]) extends Vehicle{
 
   var BikeMake : String = ""
   var BikeReg : String = ""
@@ -11,7 +12,7 @@ class Bike (vehicle: Vehicle, carm : String, reg : String) extends Vehicle{
 
 
   //Setter
-  def Bike(bikeID : String, bikeType : String, carm : String, reg : String): Unit = {
+  def Bike(bikeID : String, bikeType : String, carm : String, reg : String, test : List[Part]): Unit = {
     this.VehicleID = bikeID
     this.VehicleType = bikeType
     this.BikeMake = carm
