@@ -221,7 +221,6 @@ object Main {
     val inputs = List(int1, int2, int3)
     var sum = 0
     inputs.foreach(input => if (inputs.count(x => x == input) == 1) sum += input)
-
     sum
 
   }
