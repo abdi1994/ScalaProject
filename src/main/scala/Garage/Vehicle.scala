@@ -12,9 +12,10 @@ trait Vehicle {
 
   //Setter
 
-  def Vehicle(vehicleid1 : String, vehicletype1 : String): Unit = {
+  def Vehicle(vehicleid1 : String, vehicletype1 : String, VParts : List[Part]): Unit = {
     this.VehicleID = vehicleid1
     this.VehicleType = vehicletype1
+    this.VehicleParts = VParts
   }
 
 
@@ -27,6 +28,8 @@ trait Vehicle {
   def getVehicleType : String = {
     VehicleType
   }
+
+  def get
 
 
   //ToString

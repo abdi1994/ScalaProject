@@ -3,22 +3,20 @@ package Garage
 /**
   * Created by Administrator on 06/06/2017.
   */
-abstract class Customer extends Person with Vehicle {
+abstract class Customer (name1 : String, age1 : Int, email1 : String, telephoneNumber1 : String, address1 : String, wallet1 : Int) extends Person(name1, age1, email1, telephoneNumber1, address1, wallet1) {
 
   var CustomerID = ""
-  var vehicleID = ""
-  var CustomerVehicle = List[Vehicle]
 
   //Setter
-  def Customer(customerid : String, vehicleID : String,name1 : String, age1 : Int, email1 : String, telephoneNumber1 : String, address1 : String, wallet1 : Int, test : List[Vehicle]): Unit = {
+  def Customer(customerid : String): Unit = {
     this.CustomerID = customerid
-    this.VehicleID = vehicleID
-    this.name = name1
-    this.age = age1
-    this.email = email1
-    this.telephoneNumber = telephoneNumber1
-    this.address = address1
-    this.wallet = wallet1
+//    this.VehicleID = vehicleID
+//    this.name = name1
+//    this.age = age1
+//    this.email = email1
+//    this.telephoneNumber = telephoneNumber1
+//    this.address = address1
+//    this.wallet = wallet1
   }
 
 
@@ -30,7 +28,11 @@ abstract class Customer extends Person with Vehicle {
 
   //ToString
   override def ToString = {
-    "Customer ID: %s\nVehicle ID: %s\nName: %s \nAge: %s\nEmail: %s\nTelephone Number: %s\nAddress: %s\nWallet: %s".format(CustomerID, VehicleID, name, age, email, telephoneNumber, address, wallet)
+    "Customer ID: %s\n".format(CustomerID)
+  }
+
+  def test(x : Int): Unit = {
+
   }
 
   //Add car to finish

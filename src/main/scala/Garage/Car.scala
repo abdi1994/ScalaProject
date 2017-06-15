@@ -4,7 +4,7 @@ package Garage
   * Created by Administrator on 06/06/2017.
   */
 //Abstract is added to remove error however alternative would be implementation
-abstract class Car (vehicle: Vehicle, carm : String, reg : String) extends Vehicle{
+abstract class Car (vehicle: Vehicle, carm : String, reg : String, carparts : List[Part]) extends Vehicle{
 
   var CarMake : String = ""
   var CarReg : String = ""
@@ -12,7 +12,7 @@ abstract class Car (vehicle: Vehicle, carm : String, reg : String) extends Vehic
 
 
   //Setter
-  def Car(carID : String, carType : String,vehicle: Vehicle, carm : String, reg : String): Unit = {
+  def Car(carID : String, carType : String,vehicle: Vehicle, carm : String, reg : String, carparts : List[Part]): Unit = {
     this.VehicleID = carID
     this.VehicleType = carType
     this.CarMake = carm

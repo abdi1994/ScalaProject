@@ -5,28 +5,52 @@ import scala.collection.mutable.ListBuffer
 /**
   * Created by Administrator on 06/06/2017.
   */
-class Garage {
+ class Garage {
 
   def main(args: Array[String]): Unit = {
 
     //val e = new Customer("1", "C2", "Test", 20, "Test-Email", "number", "test", 200)
 
-
   }
 
   val GarageCapacity : Int = 10
-  var CarsInGarage: ListBuffer[Vehicle] = ListBuffer.empty
+  var CarsInGarage : ListBuffer[Car] = ListBuffer.empty
+  var BikeInGarage : ListBuffer[Bike] = ListBuffer.empty
   val Employees : ListBuffer[Employee] = ListBuffer.empty
+//  var CustomerList : ListBuffer[Customer] = ListBuffer.empty
   var GarageOpen : Boolean = false
-  var CarQueue : ListBuffer[Vehicle] = ListBuffer.empty
+  var CarQueue : ListBuffer[Car] = ListBuffer.empty
+  var BikeQueue : ListBuffer[Bike] = ListBuffer.empty
 
 
-  def addVehicle(newVehicle : Vehicle): Unit = {
+  def addCar(newCar : Car): Unit = {
     if (CarsInGarage.length < GarageCapacity && GarageOpen == true) {
-      CarsInGarage.append(newVehicle)
+      CarsInGarage.append(newCar)
     }
     else {
-      CarQueue.append(newVehicle)
+      CarQueue.append(newCar)
+    }
+  }
+
+  def addBike(newBike : Bike): Unit ={
+    if(BikeInGarage.length < GarageCapacity && GarageOpen == true) {
+      BikeInGarage.append(newBike)
+    }
+    else {
+      BikeQueue.append(newBike)
+    }
+  }
+
+  def GarageStatus(): Boolean = {
+    GarageOpen
+  }
+
+  def PrintVehicleList(): Unit = {
+    for(z <- 0 until CarsInGarage.size) {
+      println(CarsInGarage(z))
+    }
+    for(z <- 0 until CarsInGarage.size) {
+      println(CarsInGarage(z))
     }
   }
 
@@ -62,7 +86,7 @@ class Garage {
 
   def removeQueue() = {
     if(CarsInGarage.length < GarageCapacity && CarQueue.nonEmpty) {
-      CarsInGarage.append(CarQueue(0))
+      CarsInGarage.append(CarQueue.head)
     }
   }
 
@@ -79,6 +103,7 @@ class Garage {
     var TotalDayEarning : Int = 0
 
 
+
   }
 
   def closeGarage(): Unit = {
@@ -90,7 +115,7 @@ class Garage {
   }
 
   def ToString() = {
-    "Employees: %s\nCars in Garage: %s\nCars in Queue: %s\n".format(Employees, CarsInGarage, CarQueue)
+    "Employees: %s\nCars in Garage: %s\nCars in Queue: %s\nGarage Status [Open/Closed]: %s\nGarage Capacity: %s\n".format(Employees, CarsInGarage, CarQueue, GarageOpen, GarageCapacity)
   }
 
 
