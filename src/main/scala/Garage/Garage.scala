@@ -9,7 +9,7 @@ import scala.collection.mutable.ListBuffer
 
   def main(args: Array[String]): Unit = {
 
-    //val e = new Customer("1", "C2", "Test", 20, "Test-Email", "number", "test", 200)
+    val e = new Customer("Adam", "Jones", "01522 451416", List(new Car("Fiat Panda", "NG6T R35"), new Car("Golf", "NGX5 D15")))
 
   }
 

@@ -3,20 +3,22 @@ package Garage
 /**
   * Created by Administrator on 06/06/2017.
   */
-trait Vehicle {
+abstract class Vehicle () {
 
-  var VehicleID : String = ""
-  var VehicleType : String = ""
+  var VehicleID : String
+  var VehicleType : String
+  //var VehicleParts : List[Part]
   var VehicleParts : List[Part]
 
 
-  //Setter
 
-  def Vehicle(vehicleid1 : String, vehicletype1 : String, VParts : List[Part]): Unit = {
-    this.VehicleID = vehicleid1
-    this.VehicleType = vehicletype1
-    this.VehicleParts = VParts
-  }
+  //Setter
+//
+//  def Vehicle(vehicleid1 : String, vehicletype1 : String, VParts : List[Part]): Unit = {
+//    this.VehicleID = vehicleid1
+//    this.VehicleType = vehicletype1
+//    this.VehicleParts = VParts
+//  }
 
 
   //Getter

@@ -3,40 +3,29 @@ package Garage
 /**
   * Created by Administrator on 06/06/2017.
   */
-abstract class Person(name1 : String, age1 : Int, email1 : String, telephoneNumber1 : String, address1 : String, wallet1 : Int)  {
+abstract class Person()  {
 
-  private var name : String = ""
-  private var age : Int = 0
-  private var email : String = ""
-  private var telephoneNumber : String = ""
-  private var address : String = ""
-  private var wallet : Int = 0
+  val name : String
+  val age : Int
+  var email : String
+  var telephoneNumber : String
+  var address : String
+  var wallet : Int
 
 
 
   //Setter
 
-  def Setter (name1 : String, age1 : Int, email1 : String, telephoneNumber1 : String, address1 : String, wallet1 : Int): Any = {
-    name = name1
-    age = age1
-    email = email1
-    telephoneNumber = telephoneNumber1
-    address = address1
-    wallet = wallet1
-  }
-
-//  def Person (name1 : String, age1 : Int, email1 : String, telephoneNumber1 : String, address1 : String, wallet1 : Int): Unit = {
-//    this.name = name1
-//    this.age = age1
-//    this.email = email1
-//    this.telephoneNumber = telephoneNumber1
-//    this.address = address1
-//    this.wallet = wallet1
-//  }
-
-//  def setName (name1 : String): Any = {
+//  def Setter (name1 : String, age1 : Int, email1 : String, telephoneNumber1 : String, address1 : String, wallet1 : Int): Any = {
 //    name = name1
+//    age = age1
+//    email = email1
+//    telephoneNumber = telephoneNumber1
+//    address = address1
+//    wallet = wallet1
 //  }
+
+
 
   //Getter
 

@@ -3,19 +3,20 @@ package Garage
 /**
   * Created by Administrator on 06/06/2017.
   */
-class Employee(name1 : String, age1 : Int, email1 : String, telephoneNumber1 : String, address1 : String, wallet1 : Int) extends Person(name1, age1, email1, telephoneNumber1, address1, wallet1) {
+class Employee(employeeid : String, name : String, jobrole : String, employeefreetime : Boolean) extends Person() {
 
-  var EmployeeID : String = ""
-  var JobRole : String = ""
-  var EmployeeFreeTime : Int = 480
+  val EmployeeID = employeeid
+  val Name = name
+  val JobRole = jobrole
+  val EmployeeFreeTime = employeefreetime
 
   //Setter
 
-  def Employee(employeeid : String, jobrole : String, employeebusy : Int): Unit = {
-    this.EmployeeID = employeeid
-    this.JobRole = jobrole
-    this.EmployeeFreeTime = employeebusy
-  }
+//  def Employee(employeeid : String, jobrole : String, employeebusy : Boolean): Unit = {
+//    this.EmployeeID = employeeid
+//    this.JobRole = jobrole
+//    this.EmployeeFreeTime = employeebusy
+//  }
 
   //Getter
 
@@ -27,8 +28,13 @@ class Employee(name1 : String, age1 : Int, email1 : String, telephoneNumber1 : S
     JobRole
   }
 
-  def getEmployeeFreeTime : Int = {
+  def getEmployeeFreeTime : Boolean = {
     EmployeeFreeTime
+  }
+
+  //Adds the employee to rotation
+  def rotation(enterGarage : Garage) = {
+    enterGarage.Employees.append(this)
   }
 
 
@@ -36,5 +42,8 @@ class Employee(name1 : String, age1 : Int, email1 : String, telephoneNumber1 : S
   override def ToString = {
     "Employee ID: %s\nJob Role: %s\nEmployee Free Time: %s\nName: %s\nAge: %s\nEmail: %s\nTelephone Number: %s\nAddress: %s\nWallet: %s".format(EmployeeID, JobRole, EmployeeFreeTime)
   }
+
+
+
 
 }
