@@ -15,12 +15,12 @@ import scala.collection.mutable.ListBuffer
 
   val GarageCapacity : Int = 10
   var CarsInGarage : ListBuffer[Car] = ListBuffer.empty
-  var BikeInGarage : ListBuffer[Bike] = ListBuffer.empty
+//  var BikeInGarage : ListBuffer[Bike] = ListBuffer.empty
   val Employees : ListBuffer[Employee] = ListBuffer.empty
 //  var CustomerList : ListBuffer[Customer] = ListBuffer.empty
   var GarageOpen : Boolean = false
   var CarQueue : ListBuffer[Car] = ListBuffer.empty
-  var BikeQueue : ListBuffer[Bike] = ListBuffer.empty
+//  var BikeQueue : ListBuffer[Bike] = ListBuffer.empty
 
 
   def addCar(newCar : Car): Unit = {
@@ -32,14 +32,14 @@ import scala.collection.mutable.ListBuffer
     }
   }
 
-  def addBike(newBike : Bike): Unit ={
-    if(BikeInGarage.length < GarageCapacity && GarageOpen == true) {
-      BikeInGarage.append(newBike)
-    }
-    else {
-      BikeQueue.append(newBike)
-    }
-  }
+//  def addBike(newBike : Bike): Unit ={
+//    if(BikeInGarage.length < GarageCapacity && GarageOpen == true) {
+//      BikeInGarage.append(newBike)
+//    }
+//    else {
+//      BikeQueue.append(newBike)
+//    }
+//  }
 
   def GarageStatus(): Boolean = {
     GarageOpen
@@ -105,6 +105,21 @@ import scala.collection.mutable.ListBuffer
 
 
   }
+
+  def fixVehicle(v : Vehicle, e : Employee): Unit = {
+    var cost : Int = 0
+
+    if(CarsInGarage.contains(v)) {
+      for(vp <- v.VehicleParts if vp.Broken == true) {
+        val CnD = vp.CostAndDuration()
+        cost += CnD._2
+      }
+
+      }
+    println(cost)
+    }
+
+
 
   def closeGarage(): Unit = {
     GarageOpen = false
