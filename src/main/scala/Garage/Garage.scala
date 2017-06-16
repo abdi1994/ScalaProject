@@ -23,7 +23,7 @@ import scala.collection.mutable.ListBuffer
 //  var BikeQueue : ListBuffer[Bike] = ListBuffer.empty
 
 
-  def addCar(newCar : Car): Unit = {
+  def addCar(newCar : Car): Boolean = {
     if (CarsInGarage.length < GarageCapacity && GarageOpen == true) {
       CarsInGarage.append(newCar)
     }
@@ -102,6 +102,13 @@ import scala.collection.mutable.ListBuffer
     GarageOpen = true
     var TotalDayEarning : Int = 0
 
+    while(CarQueue.nonEmpty || CarsInGarage.nonEmpty) {
+      if(CarQueue.nonEmpty && addCar(CarQueue.head)) {
+        val w = CarQueue.remove(0)
+      }
+    }
+
+
 
 
   }
@@ -115,10 +122,14 @@ import scala.collection.mutable.ListBuffer
         cost += CnD._2
       }
 
+
+
       }
     println(cost)
     }
 //-
+
+
 
 
   def closeGarage(): Unit = {
@@ -126,7 +137,7 @@ import scala.collection.mutable.ListBuffer
   }
 
   def freeEmployee(): Unit = {
-    Employees.find(z => Employees.contains(z) && z.EmployeeFreeTime > 0)
+    Employees.find(z => Employees.contains(z) && z.EmployeeFreeTime == true)
   }
 
   def ToString() = {

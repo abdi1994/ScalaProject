@@ -8,6 +8,7 @@ abstract class Vehicle {
   val VehicleID : String = ""
   val VehicleType : String = ""
   val VehicleParts : List[Part]
+  var worker : Option[Employee]
 
 
   //Setter
@@ -29,7 +30,10 @@ abstract class Vehicle {
     VehicleType
   }
 
-  def get
+  def finRepair(t : Int) : Boolean = worker match {
+    case Some(employee) => employee.EmployeeFreeTime == true
+    case None => false
+  }
 
 
   //ToString
