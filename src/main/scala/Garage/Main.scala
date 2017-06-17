@@ -7,7 +7,7 @@ class Main {
 
   def main(args: Array[String]): Unit = {
 
-    val n = new Customer("Adam", "Jones", 20,"test", "test", 20, List(new Car("")))
+    val n = new Customer("Test", "Test", 20,"test", "test", 20, List(new Car("")))
 
 
 
